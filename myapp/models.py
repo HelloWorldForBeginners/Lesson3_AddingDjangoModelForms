@@ -12,3 +12,8 @@ class Blog(models.Model):
     body = models.TextField()
     post_date = models.DateTimeField(default=timezone.now)
 
+    class Meta:
+        ordering = ('-post_date',)
+
+    def __unicode__(self):
+        return '{}'.format(self.title)
