@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.id}}
+            Title: {{form.title}}<br>
+            Body: {{form.body}}<br><br>
+            <input class="button" type="submit" value="Save" />
+            <br><br>
+        </form>
+    </div>
+    <hr><br>
+    <div>
+        Blog Entries
+        <table border="1">
+            <tr><th>Title</th><th>Slug</th><th>Body</th><th>Post Date</th></tr>
+            {% for post in posts %}
+                <tr>
+                    <td>{{post.title}}</td>
+                    <td>{{post.slug}}</td>
+                    <td>{{post.body}}</td>
+                    <td>{{post.post_date}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>.

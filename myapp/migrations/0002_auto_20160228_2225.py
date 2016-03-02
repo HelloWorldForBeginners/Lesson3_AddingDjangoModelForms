@@ -17,3 +17,4 @@ class Migration(migrations.Migration):
             options={'ordering': ('-post_date',)},
         ),
     ]
+()
